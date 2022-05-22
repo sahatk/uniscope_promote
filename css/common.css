@@ -1,0 +1,53 @@
+/* 
+  유니스코프 공통 스타일 
+*/
+
+
+
+/* font */
+.font-14{font-size: 14px;}
+.font-16{font-size: 16px;}
+.font-18{font-size: 18px;}
+.font-20{font-size: 20px;}
+.font-24{font-size: 24px; font-family: 'Pretendard-Regular'; color: rgba(49, 49, 49, 1);}
+.font-24_{font-size: 24px; font-family: 'Pretendard-Bold'; color: rgba(49, 49, 49, 1);}
+.font-24_1{font-size: 24px; font-family: 'Pretendard-Regular'; color: rgba(255, 255, 255, 1);}
+.font-26{font-size: 26px;}
+.font-30{font-size: 30px; font-family: 'Pretendard-Bold';}
+.font-30_{font-size: 30px; font-family: 'Pretendard-Regular';}
+
+/* 공통 색상 */
+.uni-color{color: #c8bda9;}
+
+/* 헤더 */
+.navbar-header{padding-top: 15px; padding-left: 10px; padding-right: 15px;}
+.navbar-collapse{padding-top: 10px; padding-left: 10px;}
+
+/* 메뉴 */
+.nav-item{font-family: 'Cafe24Simplehae'; color: #c8bda9; font-size: 20px; font-weight: normal; padding-left: 20px; padding-right: 0;}
+.nav-item:hover{color: #e5c378;}
+
+/* 타이틀 */
+.title-style{font-family: 'Cafe24Simplehae'; color: #c8bda9; font-size: 189px;}
+
+/* 어바웃 */
+.about-line::after{content: ''; display: block; background-color: #313131; height: 5px; width: 50px;}
+.about-png{padding: 10px;}
+.contact1{background-color: rgba(49, 49, 49, 1); color:rgba(200, 189, 169, 1); width: 154px; text-align: center; height: 34px; overflow: visible; line-height: 34.5px;} 
+.contact2{background-color: rgba(125, 125, 125, 1); color:rgba(255, 255, 255, 1); width: 773px; text-align: left; height: 34px; overflow: visible; padding-left: 5px;}
+.contact-text1{font-size: 30px; font-family: 'Pretendard-Regular';}
+.contact-text2{font-size: 24px; font-family: 'Pretendard-Regular'; color: rgba(255, 255, 255, 1);}
+/*CONTACT 텍스트 줄바꿈 */
+.text_br{ 
+  
+  font-family: 'Pretendard-Regular'; color: rgba(255, 255, 255, 1);
+}
+
+
+/* 스튜디오 */
+.studio-text1{font-family: 'Pretendard-Bold'; color:rgba(255, 255, 255, 1); font-size:60px; font-weight: 400;}
+.studio-text2{font-family: 'Pretendard-Regular'; color:rgba(255, 255, 255, 1); font-size:24px; font-weight: 400;}
+
+/* 푸터 */
+.footer-text1{font-family: 'Cafe24Simplehae'; color: #c8bda9; font-size: 12px; font-weight: 300; }
+.footer_png{padding-right:10px; padding-bottom: 10px;}

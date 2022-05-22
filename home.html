@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>유니스코프 홍보</title>
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/codingBooster.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/client.css">
+  <link rel="stylesheet" href="css/studio.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="https://webfontworld.github.io/Cafe24Simplehae/Cafe24Simplehae.css">
+  <link rel="stylesheet" href="font/Pretendard/pretendard.css">
+  <link rel="stylesheet" href="css/animation.css">
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/hover.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
+  <script src="js/vue.js"></script>
+  <script src="js/scroll.js"></script>
+
+  <script type="text/javascript">
+    document.oncontextmenu = function() {return false;}
+  </script>
+
+<script>
+
+  //스크롤 반응
+  $(function () {
+    var link = $('.navbar-nav li a.dot');
+    link.on('click', function (e) {
+      //href 속성을 통해, section id 타겟을 잡음
+      var target = $($(this).attr('href')); +
+        //target section의 좌표를 통해 꼭대기로 이동
+        $('html, body').animate({
+          scrollTop: target.offset().top,
+        }, 1000, 'easeOutQuad');
+      //active 클래스 부여
+      $(this).addClass('active');
+      //앵커를 통해 이동할때, URL에 #id가 붙지 않도록 함.
+      e.preventDefault();
+    });
+  });
+
+
+  // 우클릭 드래그 방지
+  $(document).ready(function() {
+    $(document).bind("contextmenu", function(e){
+        
+        return false;
+    });
+ 
+    $('img').bind("contextmenu",function(e){
+       
+        return false;
+    });
+ 
+    $('img').bind("selectstart",function(e){
+        
+        return false; 
+    });
+});
+ 
+document.oncontextmenu=function(){return false;} // 우클릭 방지
+document.onselectstart=function(){return false;} // 드래그 방지
+document.ondragstart=function(){return false;} // 선택 방지
+document.onmousedown=function(){return false;}
+</script>
+
+  <style type="text/css">
+
+    
+    /*공통*/
+    body {
+      background-color: #191919;
+      word-break: keep-all;
+    }
+
+    .stop-dragging {
+      -ms-user-select: none;
+      -moz-user-select: -moz-none;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+      user-select: none;
+      
+    }
+
+    img {
+      width: 100%;
+    }
+
+    /*포트폴리오,클라이언트,스튜디오 로고 위치*/
+    .img1 {
+      padding-top: 40px;
+    }
+
+    /* 포트폴리오 박스 가장자리 테두리 */
+    .total_box {
+      border: 1px solid transparent;
+    }
+
+    /* 클라이언트 박스 가장자리 테두리 */
+    .total_box_2 {
+      border-right-width: 8px;
+      border-left-width: 8px;
+      border-bottom-width: 10px;
+      border-top-width: 5px;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    /* .total_box_3{
+        padding-right:30px;
+        float:left;
+    } */
+
+    /* 포트폴리오 박스 안쪽 테두리 */
+    .box {
+      border: 5px solid transparent;
+      position: relative;
+    }
+
+    /*클라이언트 이미지 박스 안쪽 테두리*/
+    .box_client {
+      border: 8px solid transparent;
+      position: relative;
+    }
+
+    /*상단바 로고*/
+    .navbar-brand {
+      padding: 0 10px !important;
+    }
+
+    /*상단바 색상*/
+    .navbar-inverse {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    /*상단바 사이 간격*/
+    .nav_header {
+      min-height: 50px;
+    }
+
+     /*영상 크기*/
+     .embed-responsive {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+     /*more 이미지*/
+     .more {
+      display: none;
+    }
+
+    /*스튜디오 이미지 박스*/
+    .box_studio {
+      border-right-color: transparent;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      border-right-width: 15px;
+      border-top-width: 7.5px;
+      border-bottom-width: 7.5px;
+      border-right-style: solid;
+      border-top-style: solid;
+      border-bottom-style: solid;
+    }
+
+    /*스튜디오 일정 확인하기 버튼 */
+    .button1{
+      
+    }
+    
+    /*클라이언트 부분*/
+    #Client {
+      padding-bottom: 50px;
+    }
+
+    /*클라이언트 박스*/
+    #Client_box {
+      padding-right: 20px;
+    }
+
+   .footer_png{
+      /* padding-right: 8px !important; padding-left: 8px !important; padding-bottom: 8px; */
+   }
+  
+   
+::-webkit-scrollbar {
+
+  
+
+}
+
+::-webkit-scrollbar-track{
+    
+}
+
+::-webkit-scrollbar-thumb {
+
+    background-color: hsla(0, 0%, 42%, 0.49);
+    border-radius: 100px;
+
+}
+   
+  </style>
+</head>
+
+
+
+
+<body class='stop-dragging'>
+
+  <!--상단바 부분-->
+  <nav class="navbar navbar-inverse navbar-fixed-top navbar-expand">
+    <!--<nav class="navbar navbar-default"> : 어두운색내비게이션 메뉴바-->
+    <div class="container-fluid nav_header">
+      <!--<div class="container-fluid"> : 가로 해상도에 상관없이 100%의 width를 갖는다. 반면에 container는 약간의 양쪽 공백이 생긴다.-->
+      <div class="navbar-header">
+        <!--<div class="navbar-header"> : 홈페이지의 로고같은 것을 담는 영역-->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <!-- navbar-toggle : 화면 가로 폭이 작을 경우, navbar-toggle 나타남. 화면 가로 폭이 클 경우, navbar-toggle 사라짐.
+            collapse : 정보를 안보이도록 접어 놓았다가 클릭하면 펼쳐져서 보이게 하는 기능.
+            collapsed : 펼친상태로 시작
+            data-toggle="collapse" : 보이기/숨기기 기본 설정
+            data-target="#bs-example-navbar-collapse-1" : id가 bs-example-navbar-collapse-1 인 타겟을 지정하여 지정한 id를 적용시킨다.
+            aria-expanded="false" : 웹 접근성 측면에서 열린 부분은 true, 닫힌부분은 false로 둔다.
+          -->
+          <span class="sr-only"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="home.html"><img class="uniscope"src="image/uniscope-logo.png"></a>
+        <!--class="navbar-brand" : 회사명이나 제품명, 프로젝트명 등등 쓰임-->
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li>
+            <a class="dot" href="#Home">
+              <p class="nav-item">Home</p>
+              <!-- <img class="nav1_hover" src="image/html/nav_Home.png" alt=""> -->
+            </a>
+          </li>
+
+          <li>
+            <a class="dot" href="#About">
+              <p class="nav-item">About</p>
+              <!-- <img class="nav2_hover" src="image/html/nav_About.png" alt=""> -->
+            </a>
+          </li>
+
+          <li>
+            <a data-scroll="Portfolio" class="dot active" href="#Portfolio">
+              <p class="nav-item">Portpolio</p>
+              <!-- <img class="nav3_hover" src="image/html/nav_Portfolio.png" alt="Portpolio"> -->
+              <span class="sr-only"></span>
+            </a>
+          </li>
+
+          <li>
+            <a data-scroll="Studio" class="dot" href="#Studio">
+              <p class="nav-item">Studio</p>
+              <!-- <img class="nav4_hover" src="image/html/nav_Studio.png" alt=""> -->
+            </a>
+          </li>
+
+          <li>
+            <a data-scroll="Client" class="dot" href="#Client">
+              <p class="nav-item">Client</p>
+              <!-- <img class="nav5_hover" src="image/html/nav_Client.png" alt=""> -->
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 영상 부분-->
+  <div id="Home">
+    <div class="videoArea embed-responsive embed-responsive-16by9">
+      <video class="media1" src="video/01.mp4" muted playsinline autoplay loop preload="auto"></video>
+    </div>
+  </div>
+
+  <!-- about 부분-->
+  <div class="container-fluid" style="background-color:rgba(255, 255, 255, 1);">
+    <div class="container-fluid container_box" id="About">
+      <div class="row title">
+        <div class="col-sm-10 img1">
+          <h2 class="title-style about-line" data-aos="slide-up">ABOUT</h2>
+        </div>
+      </div>
+
+      <div class="row total_box">
+        <div class="row">
+          <div data-aos="fade-up">
+          <strong class="font-30">SINCE 2000</strong>
+          </div>
+          <p class="about_p">
+            <div data-aos="fade-up">
+              <span class="font-24">민간 기업으로서는 최초로 교육인적자원부로부터 원격교육연수원 인가를 받은 </span><span class="font-24_">유니텔연수원.<br></span>
+            </div>
+            <div data-aos="fade-up">
+              <span class="font-24_">유니스코프</span><span class="font-24">는 유니텔연수원의 오랜 </span><span class="font-24_">노하우</span><span class="font-24">와 </span><span class="font-24_">기술력</span><span class="font-24">이 집결하여 만든 </span><span class="font-24_">콘텐츠전문 개발업체</span><span class="font-24">입니다.<br></span>
+            </div>
+            <div data-aos="fade-up">
+              <span class="font-24">전문가의 기술력을 활용한 </span><span class="font-24_">다양한 플랫폼</span><span class="font-24">으로 </span><span class="font-24_">고객의 니즈</span><span class="font-24">를 완벽하게 반영하여 </span><span class="font-24_">최적화된 콘텐츠</span><span class="font-24">를 제공합니다.</span>
+            </div>
+           </p>
+        </div>
+
+        <div class="row" style="padding-bottom: 50px !important;">
+          <div class="col-sm-11" data-aos="fade-up">
+            <img class="about-png" src="image/real_image/about/about01.png">
+          </div>
+          <div class="col-sm-11" data-aos="fade-up">
+            <img class="about-png" src="image/real_image/about/about02.png">
+          </div>
+          <div class="col-sm-11" data-aos="fade-up">
+            <img class="about-png" src="image/real_image/about/about03.png">
+          </div>
+          <div class="col-sm-11" data-aos="fade-up">
+            <img class="about-png" src="image/real_image/about/about04.png">
+          </div>
+          <div class="col-sm-11" data-aos="fade-up">
+            <img class="about-png" src="image/real_image/about/about05.png">
+          </div>
+        </div>
+        <div class="row" data-aos="fade-up">
+          <p>
+            <span class="font-24">저희 유니스코프는 </span><span class="font-24_">교원연수, 공공기관, 대학기관, HRD </span><span
+              class="font-24">등 다양한 분야의 콘텐츠를 제공합니다.</span>
+          </p>
+        </div>
+      
+        <div class="row" style="padding-bottom: 130px;" id="contact" data-aos="fade-up">
+          <table class="contact0">
+            <tr>
+              <td>
+                <div class="contact1">
+                  <div class="contact-text1">CONTACT</div>
+                </div>
+              </td>
+              <td>
+                <div class="contact2">
+                  <div class="contact-text2">Phone : 1577-0152 / <span class="text_br">Fax : 02-6008-0002 / </span><span class="text_br">Mail : unitel@teacher.co.kr</span></div>
+                </div>
+              </td>
+            </tr>
+          </table>
+         
+        </div>
+
+      </div>
+
+
+
+
+
+    </div>
+    <!-- <div class="container-fluid portfolio_box" id="Client_box"> -->
+  </div>
+  </div>
+
+
+  <!-- 회색 백그라운드-->
+  <div class="container-fluid">
+    <!-- portfolio 부분-->
+    <div class="container-fluid container_box" id="Portfolio">
+      <div class="row title">
+        <div class="col-sm-10 img1">
+          <h2 class="title-style" data-aos="slide-up">PORTPOLIO</h2>
+          <!-- <img src="image/html/Portpolio.png"> -->
+        </div>
+      </div>
+
+      
+      <div class="row total_box">
+        <!-- 1 -->
+        <div class="col-sm-3 box" data-aos="zoom-in-up">
+          <a onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/01/19.mp4', '_blank', 'width=1280, height=720'); false;">
+            <img class="hover1" src="image/real_image/media_bg1.png">
+            <div class="circle_wrap1">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check1 animate__animated animate__jackInTheBox"></div>
+            </div>
+        </a>
+        </div>
+
+        <!-- 2 -->
+        <div class="col-sm-3 box" data-aos="zoom-in-up">
+          <a onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/02/bucheon.mp4', '_blank_', 'width=1280, height=720'); false;">
+            <img class="hover2" src="image/real_image/media_bg2.png">
+            <div class="circle_wrap2">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check2 animate__animated animate__jackInTheBox"></div>
+            </div>
+        </a>
+        </div>
+
+        <!-- 3 -->
+        <div class="col-sm-3 box" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/03/Preview/03.html', '_blank_', 'width=1024, height=618'); false;">
+            <img class="hover3" src="image/real_image/media_bg3.png">
+            <div class="circle_wrap3">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check3 animate__animated animate__jackInTheBox"></div>
+            </div>
+        </a>
+        </div>
+
+        <!-- 4 -->
+        <div class="col-sm-3 box" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/04/02_01.mp4', '', 'width=1280, height=720'); false;">
+            <img class="hover4" src="image/real_image/media_bg4.png">
+            <div class="circle_wrap4">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check4 animate__animated animate__jackInTheBox"></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 5 -->
+        <div class="col-sm-3 box" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/05/04_01.mp4', '', 'width=1280, height=720'); false;">
+            <img class="hover5" src="image/real_image/media_bg5.png">
+            <div class="circle_wrap5">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check5 animate__animated animate__jackInTheBox"></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 6 -->
+        <div class="col-sm-3 box" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/06/03_01.mp4', '', 'width=1280, height=720'); false;">
+            <img class="hover6" src="image/real_image/media_bg6.png">
+            <div class="circle_wrap6">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check6 animate__animated animate__jackInTheBox"></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 7 -->
+        <div class="col-sm-3 box" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/07/01_01_01.mp4', '', 'width=1280, height=720'); false;">
+            <img class="hover7" src="image/real_image/media_bg7.png">
+            <div class="circle_wrap7">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check7 animate__animated animate__jackInTheBox"></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 8 -->
+        <div class="col-sm-3 box" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/08/02_01_01.mp4', '', 'width=1280, height=720'); false;">
+            <img class="hover8" src="image/real_image/media_bg8.png">
+            <div class="circle_wrap8">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check8 animate__animated animate__jackInTheBox"></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 9 -->
+        <div class="col-sm-3 box" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/09/01_02.mp4', '', 'width=1280, height=720'); false;">
+            <img class="hover9" src="image/real_image/media_bg9.png">
+            <div class="circle_wrap9">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check9 animate__animated animate__jackInTheBox"></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 10 -->
+        <div class="col-sm-3 box" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/10/01_01.mp4', '', 'width=1280, height=720'); false;">
+            <img class="hover10" src="image/real_image/media_bg10.png">
+            <div class="circle_wrap10">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check10 animate__animated animate__jackInTheBox"></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 11 -->
+        <div class="col-sm-3 box" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/11/Preview/01.html', '', 'width=1024, height=606'); false;">
+            <img class="hover11" src="image/real_image/media_bg11.png">
+            <div class="circle_wrap11">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check11 animate__animated animate__jackInTheBox"></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- more button -->
+        <div class="col-sm-3 box" data-aos="zoom-in-up" id="more" style="cursor: pointer;">
+          <img class="click1" src="image/real_image/MORE.jpg"></a>
+        </div>
+
+        <!-- 12 -->
+        <div class="col-sm-3 box more" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/12/Preview/07.html', '', 'width=1024, height=618'); false;">
+            <img class="hover12" src="image/real_image/media_bg12.png">
+            <div class="circle_wrap12">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check12 animate__animated animate__jackInTheBox"></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 13 -->
+        <div class="col-sm-3 box more" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/13/Preview/01.html', '', 'width=1024, height=618'); false;">
+            <img class="hover13" src="image/real_image/media_bg13.png">
+            <div class="circle_wrap13">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check13 animate__animated animate__jackInTheBox"></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 14 -->
+        <div class="col-sm-3 box more" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/14/Preview/05.html', '', 'width=1280, height=760'); false;">
+            <img class="hover14" src="image/real_image/media_bg14.png">
+            <div class="circle_wrap14">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check14 animate__animated animate__jackInTheBox"></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 15 통합학급놀이-->
+        <div class="col-sm-3 box more" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/15/01/01.html', '', 'width=1012, height=630'); false;">
+            <img class="hover15" src="image/real_image/media_bg15.png">
+            <div class="circle_wrap15">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check15 animate__animated animate__jackInTheBox"></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 16 -->
+        <div class="col-sm-3 box more" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/16/01/01_01.html', '', 'width=1012, height=630'); false;">
+            <img class="hover16" src="image/real_image/media_bg16.png">
+            <div class="circle_wrap16">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check16 animate__animated animate__jackInTheBox"></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 17 -->
+        <div class="col-sm-3 box more" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/17/01/01_01.html', '', 'width=1012, height=630'); false;">
+            <img class="hover17" src="image/real_image/media_bg17.png">
+            <div class="circle_wrap17">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check17 animate__animated animate__jackInTheBox"></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 18 -->
+        <div class="col-sm-3 box more" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/18/11/index.html', '', 'width=1000, height=603'); false;">
+            <img class="hover18" src="image/real_image/media_bg18.png">
+            <div class="circle_wrap18">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check18 animate__animated animate__jackInTheBox"></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 19 -->
+        <div class="col-sm-3 box more" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/19/10/index.html', '', 'width=1000, height=603'); false;">
+            <img class="hover19" src="image/real_image/media_bg19.png">
+            <div class="circle_wrap19">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check19 animate__animated animate__jackInTheBox"></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 20 -->
+        <div class="col-sm-3 box more" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/20/lec_03/01.htm', '', 'width=1280, height=720'); false;">
+            <img class="hover20" src="image/real_image/media_bg20.png">
+            <div class="circle_wrap20">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check20 animate__animated animate__jackInTheBox"></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 21 -->
+        <div class="col-sm-3 box more" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/21/01/01.html', '', 'width=1280, height=760'); false;">
+            <img class="hover21" src="image/real_image/media_bg21.png">
+            <div class="circle_wrap21">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check21 animate__animated animate__jackInTheBox"></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 22 -->
+        <div class="col-sm-3 box more" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/22/hrdseoul.mp4', '', 'width=1280, height=720'); false;">
+            <img class="hover22" src="image/real_image/media_bg22.png">
+            <div class="circle_wrap22">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check22 animate__animated animate__jackInTheBox"></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 23 -->
+        <div class="col-sm-3 box more" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/23/02/01.html', '', 'width=1280, height=760'); false;">
+            <img class="hover23" src="image/real_image/media_bg23.png">
+            <div class="circle_wrap23">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check23 animate__animated animate__jackInTheBox"></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 24 -->
+        <div class="col-sm-3 box more" data-aos="zoom-in-up">
+          <a
+            onClick="window.open('https://unitel.ksidc.net/uniscope_homepage/html/24/01/01.html', '', 'width=1280, height=760'); false;">
+            <img class="hover24" src="image/real_image/media_bg24.png">
+            <div class="circle_wrap24">
+              <div class="circle top"></div>
+              <div class="circle bottom"></div>
+              <div class="circle check24 animate__animated animate__jackInTheBox"></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- studio 부분-->
+    <div class="container-fluid container_box" id="Studio">
+      <div class="row title">
+        <div class="col-sm-10 img1">
+          <h2 class="title-style" data-aos="slide-up">STUDIO</h2>
+          <!-- <img src="image/html/Studio.png" class="img-fluid"> -->
+        </div>
+      </div>
+
+      <div class="row total_box">
+        <span class="button1" style="float: right; z-index:100; display: none;" onClick="window.open('schedule/schedule.html', '_blank', 'width=1280, height=820'); false;"><img src="image/real_image/studio/bt.png"></span>
+        
+        <div class="row"  style="display: inline;">
+           <h2 class="studio-text1 col-sm-9" data-aos="fade-up">내부 스튜디오 운영</h2>           
+        </div>
+
+        <div class="row" data-aos="fade-up">
+           <div class="studio-text2">크로마키, 칠판강의, 유튜브 방송 등 다양한 컨셉 촬영 가능</div>
+         </div>
+
+        
+          <div class="col-sm-6 box_studio" data-aos="zoom-in-up">
+            <img class="studio_png" src="image/real_image/studio_bg1.png">
+          </div>
+
+          <div class="col-sm-6 box_studio" data-aos="zoom-in-up">
+            <img class="studio_png" src="image/real_image/studio_bg2.png">
+          </div>
+        
+
+        <div class="row" data-aos="fade-up">
+            <div class="studio-text2">카메라, 유무선 마이크, 조명, 프롬포터 등 유수의 장비 보유 및 분장실, 촬영대기실 사용 가능</div>
+        </div>
+
+          <div class="col-sm-4 box_studio" data-aos="zoom-in-up">
+            <img class="studio_png" src="image/real_image/studio_bg3.png">
+          </div>
+
+          <div class="col-sm-4 box_studio" data-aos="zoom-in-up">
+            <img class="studio_png" src="image/real_image/studio_bg4.png">
+          </div>
+
+          <div class="col-sm-4 box_studio" data-aos="zoom-in-up">
+            <img class="studio_png" src="image/real_image/studio_bg5.png">
+          </div>
+        
+          <div class="col-sm-6 box_studio" data-aos="zoom-in-up">
+            <img class="studio_png" src="image/real_image/studio_bg6.png">
+          </div>
+
+          <div class="col-sm-6 box_studio" data-aos="zoom-in-up">
+            <img class="studio_png" src="image/real_image/studio_bg7.png">
+          </div>
+        
+      </div>
+    </div>
+
+    <!-- client 부분-->
+    <div class="container-fluid container_box" id="Client">
+      <div class="row title">
+        <div class="col-sm-10 img1">
+          <h2 class="title-style" data-aos="slide-up">CLIENT</h2>
+          <!-- <img src="image/html/Client.png" class="img-fluid"> -->
+        </div>
+      </div>
+
+      <div class="row total_box">
+        <div class="row">
+          <span class="col-sm-11 box_client" data-aos="zoom-in-up">
+            <img class="img-thumbnail client_png" src="image/real_image/client_bg1.png">
+          </span>
+
+          <span class="col-sm-11 box_client" data-aos="zoom-in-up">
+            <img class="img-thumbnail client_png" src="image/real_image/client_bg2.png">
+          </span>
+
+          <span class="col-sm-11 box_client" data-aos="zoom-in-up">
+            <img class="img-thumbnail client_png" src="image/real_image/client_bg3.png">
+          </span>
+
+          <span class="col-sm-11 box_client" data-aos="zoom-in-up">
+            <img class="img-thumbnail client_png" src="image/real_image/client_bg4.png">
+          </span>
+
+          <span class="col-sm-11 box_client" data-aos="zoom-in-up">
+            <img class="img-thumbnail client_png" src="image/real_image/client_bg5.png">
+          </span>
+        
+          <span class="col-sm-11 box_client" data-aos="zoom-in-up">
+            <img class="img-thumbnail client_png" src="image/real_image/client_bg6.png">
+          </span>
+
+          <span class="col-sm-11 box_client" data-aos="zoom-in-up">
+            <img class="img-thumbnail client_png" src="image/real_image/client_bg7.png">
+          </span>
+
+          <span class="col-sm-11 box_client" data-aos="zoom-in-up">
+            <img class="img-thumbnail client_png" src="image/real_image/client_bg8.png">
+          </span>
+
+          <span class="col-sm-11 box_client" data-aos="zoom-in-up">
+            <img class="img-thumbnail client_png" src="image/real_image/client_bg9.png">
+          </span>
+
+          <span class="col-sm-11 box_client" data-aos="zoom-in-up">
+            <img class="img-thumbnail client_png" src="image/real_image/client_bg10.png">
+          </span>
+      
+          <span class="col-sm-11 box_client" data-aos="zoom-in-up">
+            <img class="img-thumbnail client_png" src="image/real_image/client_bg11.png">
+          </span>
+
+          <span class="col-sm-11 box_client" data-aos="zoom-in-up">
+            <img class="img-thumbnail client_png" src="image/real_image/client_bg12.png">
+          </span>
+
+          <span class="col-sm-11 box_client" data-aos="zoom-in-up">
+            <img class="img-thumbnail client_png" src="image/real_image/client_bg13.png">
+          </span>
+
+          <span class="col-sm-11 box_client" data-aos="zoom-in-up">
+            <img class="img-thumbnail client_png" src="image/real_image/client_bg14.png">
+          </span>
+
+          <span class="col-sm-11 box_client" data-aos="zoom-in-up">
+            <img class="img-thumbnail client_png" src="image/real_image/client_bg15.png">
+          </span>
+
+          <span class="col-sm-11 box_client" data-aos="zoom-in-up">
+            <img class="img-thumbnail client_png" src="image/real_image/client_bg16.png">
+          </span>
+
+          <span class="col-sm-11 box_client" data-aos="zoom-in-up">
+            <img class="img-thumbnail client_png" src="image/real_image/client_bg17.png">
+          </span>
+
+          <span class="col-sm-11 box_client" data-aos="zoom-in-up">
+            <img class="img-thumbnail client_png" src="image/real_image/client_bg18.png">
+          </span>
+
+          <span class="col-sm-11 box_client" data-aos="zoom-in-up">
+            <img class="img-thumbnail client_png" src="image/real_image/client_bg19.png">
+          </span>
+
+          <span class="col-sm-11 box_client" data-aos="zoom-in-up">
+            <img class="img-thumbnail client_png" src="image/real_image/client_bg20.png">
+          </span>
+
+          <span class="col-sm-11 box_client" data-aos="zoom-in-up">
+            <img class="img-thumbnail client_png" src="image/real_image/client_bg21.png">
+          </span>
+        </div>
+
+        
+        
+        
+
+      </div>
+      
+      
+    </div>
+
+    <!-- footer 부분-->
+    <div class="container-fluid container_box">
+      <div class="row total_box"  style="padding-bottom:50px;">
+        <div class="row" style="padding-top:40px;">
+          <img class="footer_png" src="image/real_image/footer.png" style="width: 160px; float: left;">
+    
+          <span class="footer_width" style="float: left;width: 80%;">
+            <div class="footer-text1">
+              <span class="text_br2">서울특별시 강서구 마곡서로 152 두산더랜드타워 B동 5층 518,519,523호 / </span>
+              <span class="text_br2">스튜디오: 9층 914호 /</span>
+              <span class="text_br2">문의 : 1577-0152 / </span><span class="text_br2">팩스 : 02-6008-0002 / </span><span class="text_br2">메일 : UNNITEL@TEACHER.CO.KR</span>
+              <span class="text_br2">Copyright 2000 teacher.co.kr ALL RIGHTS RESERVED</span>
+            </div>
+           
+          </span>
+        </div>
+      </div>
+      
+    </div>
+    
+</body>
+<script>
+  AOS.init(); /* 주석부분과 같이 AOS API - Global Setting 가능 AOS.init({ offset: 120, delay: 0, duration: 400, easing: 'ease', once: false, mirror: false, anchorPlacement: 'top-bottom' }); */
+</script>
+
+</html>

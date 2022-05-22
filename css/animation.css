@@ -1,0 +1,91 @@
+.circle {
+    position: relative;
+    overflow: hidden;
+    height: 50%;
+    pointer-events: none;
+    
+}
+
+.circle:after {
+    content:"";
+    position: absolute;
+    top:0;
+    left:0;
+    width:50px;
+    height: 50px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border:4px solid transparent;
+    pointer-events: none;
+
+}
+
+@keyframes spin-circle-top {
+    from{
+        transform: rotate(-135deg);
+    }
+    to{
+        transform: rotate(45deg);
+    }
+    
+}
+
+@keyframes spin-circle-bottom {
+    from{
+        transform: rotate(45deg);
+    }
+    to{
+        transform: rotate(225deg);
+    }
+    
+}
+
+@keyframes blink-effect { 50% { opacity: 0.7; } }
+
+.circle.top:after{
+    border-top-color: rgba(255, 255, 255, 1);
+    border-left-color: rgba(255, 255, 255, 1);
+    animation: spin-circle-top 0.2s 1 linear both;
+    pointer-events: none;
+    
+    
+}
+
+.circle.bottom:after{
+    border-top-color: rgba(255, 255, 255, 1);
+    border-left-color: rgba(255, 255, 255, 1);
+    top: -25px;
+    animation: spin-circle-bottom 0.2s 0.2s 1 linear both;
+    pointer-events: none;
+    
+ 
+}
+
+.circle_wrap1,  .circle_wrap2,  .circle_wrap3,  .circle_wrap4,  .circle_wrap5,  .circle_wrap6,  .circle_wrap7,  .circle_wrap8,  .circle_wrap9,  .circle_wrap10,  .circle_wrap11,  .circle_wrap12,  .circle_wrap13,  .circle_wrap14,  .circle_wrap15,  .circle_wrap16,  .circle_wrap17,  .circle_wrap18,  .circle_wrap19,  .circle_wrap20,  .circle_wrap21,  .circle_wrap22,  .circle_wrap23,  .circle_wrap24{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+   
+}
+
+.check1, .check2, .check3, .check4, .check5, .check6, .check7, .check8, .check9, .check10, .check11, .check12, .check13, .check14, .check15, .check16, .check17, .check18, .check19, .check20, .check21, .check22, .check23, .check24{
+    background-image: url("../image/real_image/media_hover.png");
+    background-repeat: no-repeat;
+    display: none;
+    position: relative;
+    width: 68px;
+    height: 58px;
+    top: -60px;
+    left:-4px;
+    pointer-events: none;
+    /* animation: blink-effect 1s step-end 1; */
+}
+
+
+
+

@@ -1,0 +1,24 @@
+@media screen and (min-width: 320px) and (max-width: 767px) {
+
+    .nav1_hover{
+        width:65px;
+    }
+
+    .nav2_hover{
+        width: 65px;
+    }
+
+    .nav3_hover{
+        width: 90px;
+    }
+
+    .nav4_hover{
+        width: 68px;
+    }
+
+    .nav5_hover{
+        width: 60px;
+    }
+
+
+}
